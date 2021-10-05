@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 62.5%;
+    /* reset pixel to rem 10px = 1rem */
+}
+
+
+:root {
+    --clr-tags: #03A9F4;
+}
+
+.grid-container {
+    --header-hg: 7.1rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main';
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--header-hg) 1fr;
+    font-size: 1.6rem;
+}
+
+.grid-container header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-hg);
+}
+
+.grid-container header ul li {
+    list-style: none;
+    background: #EEEEEE;
+    margin: 0 .5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+
+.grid-container header ul li.active {
+    color: #fff;
+    background: var(--clr-tags);
+}
+
+.grid-container main {
+    background: #DCDCDC;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+        'product'
+        'paginate';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5rem;
+}
+
+.grid-container main .product {
+    grid-area: product;
+    background:whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: 0 35rem;
+    padding-top: 2.1rem;
+    gap: 2.3rem;
+}
+
+.grid-container main .product .product-card {
+    width: 25rem;
+    height: 43rem;
+    background: purple;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container main .product .product-card .card-top {
+    display: flex;
+    height: 30rem;
+    width: 100%;
+}
+
+.grid-container main .product .product-card .card-top img {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container main .product .product-card .card-bottom {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    background: #fff;
+    padding: 0 1.1rem;
+}
+
+.grid-container main .product .product-card .card-bottom .product-name {
+    display: flex;
+    align-items: center;
+}
+
+.grid-container main .product .product-card .card-bottom .product-ulties {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid-container main .product .product-card .card-bottom .product-ulties p {
+    color: #ff2020;
+}
+
+.grid-container main .product .product-card .card-bottom .product-ulties .product-rating {
+
+    color: #FFD513;
+}
+
+.grid-container main .paginate {
+    grid-area: paginate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #DCDCDC;
+}
+
+.grid-container main .paginate ul
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: var(--header-hg);
+}
+.grid-container main .paginate ul li{
+    list-style: none;
+    background: #EEEEEE;
+     margin: 2rem 1rem; 
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+}
+.grid-container main .paginate ul li.active{
+    color: #fff;
+    background: var(--clr-tags);
+    border: 1px ;
+}
